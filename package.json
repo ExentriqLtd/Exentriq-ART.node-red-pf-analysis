@@ -1,0 +1,18 @@
+{
+  "name": "pf-analysis",
+  "version": "1.0.0",
+  "description": "Node-RED nodes to manage analysis reports",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Paolo Martino",
+  "license": "ISC",
+  "dependencies": {
+    "pdfjs-dist": "^2.10.377"
+  },
+  "node-red": {
+    "nodes": {
+      "wll-pdf": "wll-pdf/wll-pdf.js"
+    }
+  }
+}

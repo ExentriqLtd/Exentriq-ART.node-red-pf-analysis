@@ -1,0 +1,230 @@
+<script type="text/javascript">
+
+  const parametersWLL = [
+  { name: 'Acrilammide', rule: null },
+  { name: 'Antimonio', rule: null },
+  { name: 'Antiparassitari totali', rule: null },
+  { name: 'Arsenico', rule: null },
+  { name: 'Attività dell\' acqua', rule: null },
+  { name: 'Azoto ammoniacale', rule: null },
+  { name: 'Azoto nitrico', rule: null },
+  { name: 'Batteri lattici mesofili', rule: null },
+  { name: 'Berillio', rule: null },
+  { name: 'Bicarbonati', rule: null },
+  { name: 'Boro', rule: null },
+  { name: 'Boro solubile', rule: null },
+  { name: 'Bromoformio', rule: null },
+  { name: 'Cadmio', rule: null },
+  { name: 'Calcare totale', rule: null },
+  { name: 'Calcio', rule: null },
+  { name: 'Calcio carbonato attivo', rule: null },
+  { name: 'Calcio scambiabile (BaCl2)', rule: null },
+  { name: 'Campylobacter spp', rule: null },
+  { name: 'Capacità di scambio cationico con BaCl2', rule: null },
+  { name: 'Carica batterica totale mesofila', rule: null },
+  { name: 'Chlorate', rule: null },
+  { name: 'Clorati', rule: null },
+  { name: 'Cloriti', rule: null },
+  { name: 'Clorodibromometano', rule: null },
+  { name: 'Cloroformio', rule: null },
+  { name: 'Cloruri', rule: null },
+  { name: 'Cloruro', rule: null },
+  { name: 'Cloruro di Vinile', rule: null },
+  { name: 'Cobalto', rule: null },
+  { name: 'Colore', rule: null },
+  { name: 'Coliformi fecali', rule: null },
+  { name: 'Concentrazione ione idrogeno (pH)', rule: null },
+  { name: 'Conducibilità', rule: null },
+  { name: 'Conducibilità elettrica a 20 °C', rule: null },
+  { name: 'Conduttività', rule: null },
+  { name: 'Conta della Carica microbica totale', rule: null },
+  { name: 'Conta della Carica microbica totale mesofila', rule: null },
+  { name: 'Conta delle colonie su Agar a 22°C', rule: null },
+  { name: 'Conta delle colonie su Agar a 37°C', rule: null },
+  { name: 'Conta di Bacillus cereus presunto', rule: null },
+  { name: 'Conta di Batteri coliformi', rule: null },
+  { name: 'Conta di Coliformi termotolleranti', rule: null },
+  { name: 'Conta di Coliformi totali a 30°C', rule: null },
+  { name: 'Conta di Enterobatteriaceae a 37°C', rule: null },
+  { name: 'Conta di Enterococchi intestinali', rule: null },
+  { name: 'Conta di Escherichia coli', rule: null },
+  { name: 'Conta di Escherichia coli beta-glucuronidasi positivo', rule: null },
+  { name: 'Conta di Lieviti', rule: null },
+  { name: 'Conta di Listeria monocytogenes', rule: null },
+  { name: 'Conta di Muffe', rule: null },
+  { name: 'Conta di Muffe e lieviti', rule: null },
+  { name: 'Conta di Pseudomonas aeruginosa', rule: null },
+  { name: 'Conta di Stafilococchi coagulasi positivi a 37°C(Staphylococcus aureus e altre specie)', rule: null },
+  { name: 'Conta di anaerobi solfito riduttori a 37°C', rule: null },
+  { name: 'Cromo', rule: null },
+  { name: 'Cromo totale', rule: null },
+  { name: 'Diclorobromometano', rule: null },
+  { name: 'Ditiocarbammati totali come CS2', rule: null },
+  { name: 'Durezza totale', rule: null },
+  { name: 'E.coli O157 : H7', rule: null },
+  { name: 'Enterobatteri patogeni: ricerca delle Salmonelle', rule: null },
+  { name: 'Epicloridrina', rule: null },
+  { name: 'Escherichia coli', rule: null },
+  { name: 'Escherichia coli produttori di shiga tossina (STEC)', rule: null },
+  { name: 'Ethephon', rule: null },
+  { name: 'Ferro', rule: null },
+  { name: 'Ferro assimilabile', rule: null },
+  { name: 'Fosetyl-Al (SUM Fosetyl + Phosphonic acid and their salts, expressed as fosetyl)', rule: null },
+  { name: 'Fosfati', rule: null },
+  { name: 'Fosforo assimilabile', rule: null },
+  { name: 'Fosforo totale come P2O5', rule: null },
+  { name: 'Fosforo totale espresso come P2O5', rule: null },
+  { name: 'Glufosinate', rule: null },
+  { name: 'Glyphosate', rule: null },
+  { name: 'Listeria monocytogenes', rule: null },
+  { name: 'Magnesio', rule: null },
+  { name: 'Magnesio scambiabile (BaCl2)', rule: null },
+  { name: 'Manganese', rule: null },
+  { name: 'Manganese assimilabile', rule: null },
+  { name: 'Mercurio', rule: null },
+  { name: 'Molibdeno', rule: null },
+  { name: 'Nichel', rule: null },
+  { name: 'Nitrati', rule: null },
+  { name: 'Nitriti', rule: null },
+  { name: 'Nitrito', rule: null },
+  { name: 'Norovirus', rule: null },
+  { name: 'Odore', rule: null },
+  { name: 'Ossidabilità al permanganato', rule: null },
+  { name: 'Perchlorate', rule: null },
+  { name: 'pH', rule: null },
+  { name: 'pH in acqua', rule: null },
+  { name: 'Phosphonic Acid expressed as Fosetyl', rule: null },
+  { name: 'Phosphorous acid and its salts expressed as phosphorous acid', rule: null },
+  { name: 'Piombo', rule: null },
+  { name: 'Potassio', rule: null },
+  { name: 'Potassio scambiabile (BaCl2)', rule: null },
+  { name: 'Rame', rule: null },
+  { name: 'Rame assimilabile', rule: null },
+  { name: 'Residuo fisso a 180 °C', rule: null },
+  { name: 'Ricerca di Listeria monocytogenes', rule: null },
+  { name: 'Ricerca di Salmonella spp', rule: null },
+  { name: 'Selenio', rule: null },
+  { name: 'Sodio', rule: null },
+  { name: 'Sodio scambiabile (BaCl2)', rule: null },
+  { name: 'Solfati', rule: null },
+  { name: 'Solfato', rule: null },
+  { name: 'Sommatoria Tricloroetilene + Tetracloroetilene (DLgs 31/01)', rule: null },
+  { name: 'Stagno', rule: null },
+  { name: 'Streptococchi fecali', rule: null },
+  { name: 'Tallio', rule: null },
+  { name: 'Tetracloroetilene', rule: null },
+  { name: 'Torbidità', rule: null },
+  { name: 'Trialometani totali (DLgs 31/2001)', rule: null },
+  { name: 'Tricloroetilene', rule: null },
+  { name: 'Vanadio', rule: null },
+  { name: "Virus dell'epatite A", rule: null },
+  { name: 'Yersinia enterocolitica', rule: null },
+  { name: 'Zinco', rule: null },
+  { name: 'Zinco assimilabile', rule: null }
+];
+  
+  const offsetsWLL = [
+    { columns: 'Risultato, U.M., LOQ', parameter: [40, 300], result: [315, 390] },
+    { columns: 'Risultato, U.M., LOQ, Limiti', parameter: [40, 240], result: [240, 300] },
+    { columns: 'Risultato, Incertezza, U.M., LOQ', parameter: [40, 250], result: [250, 300] },
+    { columns: 'Risultato, Incertezza, U.M., LOQ, Limiti', parameter: [40, 200], result: [200, 250] },
+    { columns: 'Attività, Risultato, U.M., LOQ', parameter: [40, 250], result: [300, 390] },
+    { columns: 'Attività, Risultato, U.M., LOQ, Limiti, %RMA', parameter: [40, 200], result: [250, 300] },
+    { columns: 'Attività, Risultato, Incertezza, U.M., LOQ', parameter: [40, 200], result: [250, 300] },
+    { columns: 'Attività, Risultato, Incertezza, U.M., LOQ, Limiti', parameter: [40, 160], result: [200, 250] }
+  ];
+
+  const headersWLL = [
+    { name: 'report', rule: 'Rapporto di prova n°: (?<report>\\d{2}WL\\d{7}) del \\d{1,2}\/\\d{1,2}\/\\d{4}' },
+    { name: 'report_date', rule: 'Rapporto di prova n°: \\d{2}WL\\d{7} del (?<report_date>\\d{1,2}\/\\d{1,2}\/\\d{4})' },
+    { name: 'reception_date', rule: 'Data accettazione: (?<reception_date>\\d{1,2}\/\\d{1,2}\/\\d{4})' },
+    { name: 'sample_date', rule: 'Data campionamento: (?<sample_date>\\d{1,2}\/\\d{1,2}\/\\d{4})' },
+    { name: 'matrix', rule: 'Matrice: (?<matrix>.*)' },
+    { name: 'description', rule: 'Descrizione: (?<description>.*)' },
+    { name: 'batch', rule: 'Lotto: (?<batch>.*)' },
+    { name: 'provider', rule: 'Fornitore: (?<provider>.*)' }
+  ];
+
+  RED.nodes.registerType('wll-pdf', {
+    category: 'Planet Farms',
+    color: '#73938b',
+    defaults: {
+      name: { value: '' },
+      headers: { value: JSON.stringify(headersWLL) },
+      offsets: { value: JSON.stringify(offsetsWLL) },
+      parameters: { value: JSON.stringify(parametersWLL) },
+    },
+    inputs: 1,
+    outputs: 1,
+    icon: 'water_life_lab.svg',
+    label: function() {
+      return this.name || 'W&LL';
+    },
+    paletteLabel: 'W&LL',
+    oneditprepare: function() {
+      $("#node-input-headers").typedInput({
+        type:"json",
+        types:["json"]
+      });
+      $("#node-input-offsets").typedInput({
+        type:"json",
+        types:["json"]
+      });
+      $("#node-input-parameters").typedInput({
+        type:"json",
+        types:["json"]
+      });
+    }
+  });
+</script>
+    
+<script type="text/html" data-template-name="wll-pdf">
+  <div class="form-row">
+    <label for="node-input-name"><i class="fa fa-tag"></i> Name</label>
+    <input type="text" id="node-input-name" placeholder="Name">
+  </div>
+  <div class="form-row">
+    <label for="node-input-headers"><i class="fa fa-database"></i> Headers</label>
+    <input type="text" id="node-input-headers">
+  </div>
+  <div class="form-row">
+    <label for="node-input-offsets"><i class="fa fa-database"></i> Offsets</label>
+    <input type="text" id="node-input-offsets">
+  </div>
+  <div class="form-row">
+    <label for="node-input-parameters"><i class="fa fa-database"></i> Parameters</label>
+    <input type="text" id="node-input-parameters">
+  </div>
+</script>
+  
+<script type="text/html" data-help-name="wll-pdf">
+  <p>Parses analysis report documents, coming from <strong>Water & Life Lab</strong> in PDF format, to extract information.</p>
+  
+  <h3>Inputs</h3>
+    <dl class="message-properties">
+      <dt>payload<span class="property-type">buffer</span></dt>
+      <dd>The PDF content.</dd>
+      <dt>filename<span class="property-type">string</span></dt>
+      <dd>The PDF filename.</dd>
+  </dl>
+  
+  <h3>Outputs</h3>
+  <dl class="message-properties">
+    <dt>payload <span class="property-type">object</span></dt>
+    <dd>A JavaScript object.</dd>
+    <dt>documentType <span class="property-type">string</span></dt>
+    <dd>The detected business document type (order, confirmation etc.) of the PDF.</dd>
+    <dt>recognizedText <span class="property-type">object</span></dt>
+    <dd>The text as it was extracted from the PDF</dd>
+  </dl>
+  
+  <h3>Details</h3>
+  <p>PDF files coming from <strong>Water & Life Lab</strong> contain parsable text.</p>
+  <p>The PDF is processed as follows:</p>
+  <ul>
+    <li>text extraction</li>
+    <li>text analysis</li>
+    <li>exception handling (fix or report)</li>
+  </ul>
+  <p>Some useful information can be gathered analyzing the filename of the PDF.</p>
+</script>
