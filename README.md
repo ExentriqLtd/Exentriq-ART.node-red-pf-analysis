@@ -60,7 +60,7 @@ PUT /lab-reports-flat/_mapping
 
 ## Search for unknown parameters
 
-~~~
+~~~json
 {
   "query": {
     "bool": {
