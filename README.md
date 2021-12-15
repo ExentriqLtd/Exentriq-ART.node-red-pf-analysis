@@ -62,14 +62,14 @@ PUT /lab-reports-flat/_mapping
 
 ~~~
 {
-	"query": {
-		"bool": {
-			"must": {
-				"exists": {
-					"field": "entity.unknownParameters"
-				}
-			}
-		}
-	}
+  "query": {
+    "bool": {
+      "must": {
+        "exists": {
+          "field": "entity.unknownParameters"
+        }
+      }
+    }
+  }
 }
 ~~~
