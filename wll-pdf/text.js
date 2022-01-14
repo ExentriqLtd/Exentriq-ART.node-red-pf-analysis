@@ -215,7 +215,7 @@ const analyzeText = (pages, headers, offsets, parameters) => {
           report.number = details.report;
           report.report_date = details.report_date;
           report.reception_date = details.reception_date;
-          report.sample_date = details.sample_date ? details.sample_date : '';
+          report.sample_date = details.sample_date ? details.sample_date : details.reception_date;
           report.matrix = details.matrix;
           report.description = details.description;
           report.batch = details.batch ? details.batch : '';
