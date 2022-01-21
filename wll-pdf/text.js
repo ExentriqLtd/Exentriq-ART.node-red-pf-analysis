@@ -72,7 +72,7 @@ const getValues = (lines, parameters, offset) => {
 
   for (let index = 1; index < lines.length; index++) {
     const line = lines[index];
-    let parameterCandidate = line.strings.filter(x => x.x > offset.parameter[0] && x.x < offset.parameter[1]).map(x => x.text).join('');
+    let parameterCandidate = line.strings.filter(x => x.x > offset.parameter[0] && x.x < offset.parameter[1]).map(x => x.text).join('').replace(/  /g, ' ');
     let parameter = parameters.find(x => x.name.toLowerCase() === parameterCandidate.trim().toLowerCase());
 
     // parameter name split on multiple lines?
