@@ -96,7 +96,9 @@ const getValues = (lines, parameters, offset) => {
       }
     }
 
+    const unitOfMeasure = line.strings.filter(x => x.x > offset.unitOfMeasure[0] && x.x < offset.unitOfMeasure[1]).map(x => x.text).join('').trim();
     let value = line.strings.filter(x => x.x > offset.result[0] && x.x < offset.result[1]).map(x => x.text).join('').trim();
+    
     if (parameter) {
       if (value) {
         const nextLine = lines[index + 1];
@@ -111,6 +113,7 @@ const getValues = (lines, parameters, offset) => {
 
       values.push({
         name: parameter.name,
+        unitOfMeasure,
         value: isNumeric(value) ? parseFloat(value) : value
       });
 

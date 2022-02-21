@@ -1,14 +1,22 @@
 <script type="text/javascript">
 
   const parametersWLL = [
+  { name: 'Acidi fulvici', rule: null },
+  { name: 'Acidi umici', rule: null },
+  { name: 'Acidi umici e fulvici', rule: null },
   { name: 'Acrilammide', rule: null },
+  { name: 'Allergene senape (PCR REAL TIME)', rule: null },
+  { name: 'Alluminio', rule: null },
   { name: 'Ammonio', rule: null },
   { name: 'Antimonio', rule: null },
   { name: 'Antiparassitari totali', rule: null },
   { name: 'Arsenico', rule: null },
   { name: 'Attività dell\' acqua', rule: null },
   { name: 'Azoto ammoniacale', rule: null },
+  { name: 'Azoto ammoniacale su eluati da test di cessione in acqua deionizzata', rule: null },
   { name: 'Azoto nitrico', rule: null },
+  { name: 'Azoto organico', rule: null },
+  { name: 'Azoto totale', rule: null },
   { name: 'Batteri lattici mesofili', rule: null },
   { name: 'Berillio', rule: null },
   { name: 'Bicarbonati', rule: null },
@@ -23,6 +31,9 @@
   { name: 'Calcio scambiabile (BaCl2)', rule: null },
   { name: 'Campylobacter spp', rule: null },
   { name: 'Capacità di scambio cationico con BaCl2', rule: null },
+  { name: 'Carbonio organico totale', rule: null },
+  { name: 'Carbonio organico totale (TOC)', rule: null },
+  { name: 'Carica batterica psicrofila', rule: null },
   { name: 'Carica batterica totale mesofila', rule: null },
   { name: 'Chlorate', rule: null },
   { name: 'Clorati', rule: null },
@@ -31,6 +42,7 @@
   { name: 'Cloroformio', rule: null },
   { name: 'Cloruri', rule: null },
   { name: 'Cloruro', rule: null },
+  { name: 'Cloruro di sodio', rule: null },
   { name: 'Cloruro di Vinile', rule: null },
   { name: 'Cobalto', rule: null },
   { name: 'Colore', rule: null },
@@ -61,6 +73,8 @@
   { name: 'Conta di anaerobi solfito riduttori a 37°C', rule: null },
   { name: 'Cromo', rule: null },
   { name: 'Cromo totale', rule: null },
+  { name: 'Diclorobromometano', rule: null },
+  { name: 'Dipropilenglicole monometiletere', rule: null },
   { name: 'Diclorobromometano', rule: null },
   { name: 'Ditiocarbammati totali come CS2', rule: null },
   { name: 'Durezza totale', rule: null },
@@ -109,6 +123,7 @@
   { name: 'Residuo fisso a 180 °C', rule: null },
   { name: 'Ricerca di Listeria monocytogenes', rule: null },
   { name: 'Ricerca di Salmonella spp', rule: null },
+  { name: 'Sapore', rule: null },
   { name: 'Selenio', rule: null },
   { name: 'Sodio', rule: null },
   { name: 'Sodio scambiabile (BaCl2)', rule: null },
@@ -128,18 +143,17 @@
   { name: 'Zinco', rule: null },
   { name: 'Zinco assimilabile', rule: null }
 ];
-  
+
   const offsetsWLL = [
-    { columns: 'Risultato, U.M., LOQ', parameter: [40, 300], result: [315, 390] },
-    { columns: 'Risultato, U.M., LOQ, Limiti', parameter: [40, 240], result: [240, 300] },
-    { columns: 'Risultato, Incertezza, U.M., LOQ', parameter: [40, 250], result: [250, 300] },
-    { columns: 'Risultato, Incertezza, U.M., LOQ, Limiti', parameter: [40, 200], result: [200, 250] },
-    { columns: 'Attività, Risultato, U.M., LOQ', parameter: [40, 250], result: [300, 390] },
-    { columns: 'Attività, Risultato, U.M., LOQ, Limiti, %RMA', parameter: [40, 200], result: [250, 300] },
-    { columns: 'Attività, Risultato, Incertezza, U.M., LOQ', parameter: [40, 200], result: [250, 300] },
-    { columns: 'Attività, Risultato, Incertezza, U.M., LOQ, Limiti', parameter: [40, 160], result: [200, 250] },
-    { columns: 'Attività, Risultato, Incertezza, U.M., LOQ, Limiti, %RMA', parameter: [40, 160], result: [200, 250] }
-  ];
+    { columns: 'Risultato, U.M., LOQ', parameter: [40, 300], result: [315, 390], unitOfMeasure: [390, 450] },
+    { columns: 'Risultato, U.M., LOQ, Limiti', parameter: [40, 240], result: [240, 300], unitOfMeasure: [305, 360] },
+    { columns: 'Risultato, Incertezza, U.M., LOQ', parameter: [40, 250], result: [250, 300], unitOfMeasure: [370, 420] },
+    { columns: 'Risultato, Incertezza, U.M., LOQ, Limiti', parameter: [40, 200], result: [200, 250], unitOfMeasure: [310, 365] },
+    { columns: 'Attività, Risultato, U.M., LOQ', parameter: [40, 250], result: [300, 390], unitOfMeasure: [390, 450] },
+    { columns: 'Attività, Risultato, U.M., LOQ, Limiti, %RMA', parameter: [40, 200], result: [250, 300], unitOfMeasure: [300, 355] },
+    { columns: 'Attività, Risultato, Incertezza, U.M., LOQ', parameter: [40, 200], result: [250, 300], unitOfMeasure: [375, 430] },
+    { columns: 'Attività, Risultato, Incertezza, U.M., LOQ, Limiti', parameter: [40, 160], result: [200, 250], unitOfMeasure: [310, 360] }
+];
 
   const headersWLL = [
     { name: 'report', rule: 'Rapporto di prova n°: (?<report>\\d{2}WL\\d{7}) del \\d{1,2}\/\\d{1,2}\/\\d{4}' },
