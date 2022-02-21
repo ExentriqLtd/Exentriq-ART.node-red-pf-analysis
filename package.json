@@ -8,7 +8,7 @@
   "author": "Paolo Martino",
   "license": "ISC",
   "dependencies": {
-    "pdfjs-dist": "^2.10.377"
+    "pdfjs-dist": "2.10.377"
   },
   "node-red": {
     "nodes": {
